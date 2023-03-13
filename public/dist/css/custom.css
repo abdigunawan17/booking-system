@@ -44,6 +44,11 @@ table.t1 tr td {
     color: #6777ef;
 }
 
+.card.card-statistic-1 .card-icon i {
+    color: #fff;
+    font-size: 30px;
+}
+
 .hide {
     display: none;
 }
@@ -406,3 +411,4 @@ hr.invoice-above-table {
 .tox .tox-notification {
     display: none !important;
 }
+
