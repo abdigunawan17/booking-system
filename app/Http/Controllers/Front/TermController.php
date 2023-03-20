@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class TermController extends Controller
 {
     //
     public function index()
     {
-        $get_about_data = Page::where('id', 1)->first();
-        return view('frontend.about', compact(('get_about_data')));
+        $get_term_data = Page::where('id', 1)->first();
+        return view('frontend.term_cond', compact(('get_term_data')));
     }
 }

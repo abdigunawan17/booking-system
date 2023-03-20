@@ -20,12 +20,12 @@
                                
                                 <div class="mb-4">
                                     <label class="form-label">Question</label>
-                                    <input type="text" class="form-control" name="caption" value="{{ $get_faq_data->caption }}">
+                                    <input type="text" class="form-control" name="question" value="{{ $get_faq_data->question }}">
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="form-label">Answer</label>
-                                    <input type="text" class="form-control" name="caption" value="{{ $get_faq_data->caption }}">
+                                    <textarea name="answer" class="form-control snote h_100" cols="30" rows="30">{{ $get_faq_data->answer }}</textarea>
                                 </div>
                                 
                                 <div class="mb-4">

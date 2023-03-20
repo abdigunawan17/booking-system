@@ -24,7 +24,7 @@
 
                                 <div class="mb-4">
                                     <label class="form-label">Answer</label>
-                                    <input type="text" class="form-control" name="answer" value="{{ old('answer') }}">
+                                    <textarea name="answer" class="form-control snote h_100" cols="30" rows="30">{{ old('answer') }}</textarea>
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>

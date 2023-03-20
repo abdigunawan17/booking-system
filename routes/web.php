@@ -4,14 +4,19 @@ use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminFeatureController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminSliderController;
 use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\BlogController;
+use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\PhotoController;
+use App\Http\Controllers\Front\PrivacyController;
+use App\Http\Controllers\Front\TermController;
 use Illuminate\Support\Facades\Route;
 
 /* Front */
@@ -19,7 +24,20 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
+Route::get('/term-condition', [TermController::class, 'index'])->name('term_cond');
+
+Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy');
+
 Route::get('/photo', [PhotoController::class, 'index'])->name('photo');
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+
+Route::get('/blog/{slug}', [BlogController::class, 'show_blog'])->name('show.blog');
+
+
+
 
 //admin
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home')->middleware('admin:admin');
@@ -134,3 +152,30 @@ Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('a
 Route::post('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('admin_faq_update')->middleware('admin:admin');
 
 Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'delete'])->name('admin_faq_delete')->middleware('admin:admin');
+
+
+Route::get('/admin/page/about', [AdminPageController::class, 'about'])->name('admin_page_about')->middleware('admin:admin');
+
+Route::post('/admin/page/about/update', [AdminPageController::class, 'about_update'])->name('admin_page_about_update')->middleware('admin:admin');
+
+Route::get('/admin/page/termcond', [AdminPageController::class, 'termcond'])->name('admin_page_termcond')->middleware('admin:admin');
+
+Route::post('/admin/page/termcond/update', [AdminPageController::class, 'termcond_update'])->name('admin_page_termcond_update')->middleware('admin:admin');
+
+
+
+Route::get('/admin/page/privacy', [AdminPageController::class, 'privacy'])->name('admin_page_privacy')->middleware('admin:admin');
+
+Route::post('/admin/page/privacy/update', [AdminPageController::class, 'privacy_update'])->name('admin_page_privacy _update')->middleware('admin:admin');
+
+Route::get('/admin/page/photo-gallery', [AdminPageController::class, 'photo_gallery'])->name('admin_page_photo')->middleware('admin:admin');
+
+Route::post('/admin/page/photo-gallery/update', [AdminPageController::class, 'photo_gallery_update'])->name('admin_page_photo_update')->middleware('admin:admin');
+
+Route::get('/admin/page/blog', [AdminPageController::class, 'blog'])->name('admin_page_blog')->middleware('admin:admin');
+
+Route::post('/admin/page/blog/update', [AdminPageController::class, 'blog_update'])->name('admin_page_blog_update')->middleware('admin:admin');
+
+Route::get('/admin/page/faq', [AdminPageController::class, 'faq'])->name('admin_page_faq')->middleware('admin:admin');
+
+Route::post('/admin/page/faq/update', [AdminPageController::class, 'faq_update'])->name('admin_page_faq_update')->middleware('admin:admin');

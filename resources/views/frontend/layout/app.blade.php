@@ -70,9 +70,14 @@
                                 <li class="nav-item">
                                     <a href="{{ route('home') }}" class="nav-link">Home</a>
                                 </li>
+
+                                @if($global_page_data->about_status == 1)
                                 <li class="nav-item">
-                                    <a href="{{ route('about') }}" class="nav-link">About</a>
+                                    <a href="{{ route('about') }}" class="nav-link">{{ $global_page_data->about_heading }}</a>
                                 </li>
+                                @endif
+
+
                                 <li class="nav-item">
                                     <a href="javascript:void;" class="nav-link dropdown-toggle">Room & Suite</a>
                                     <ul class="dropdown-menu">
@@ -96,17 +101,21 @@
                                 <li class="nav-item">
                                     <a href="javascript:void;" class="nav-link dropdown-toggle">Gallery</a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="{{ route('photo') }}" class="nav-link">Photo Gallery</a>
-                                        </li>
+                                        @if($global_page_data->photo_gallery_status == 1)
+                                            <li class="nav-item">
+                                                <a href="{{ route('photo') }}" class="nav-link">{{ $global_page_data->photo_gallery_heading }}</a>
+                                            </li>
+                                        @endif
                                         <li class="nav-item">
                                             <a href="video-gallery.html" class="nav-link">Video Gallery</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="blog.html" class="nav-link">Blog</a>
-                                </li>
+                                @if($global_page_data->blog_status == 1)
+                                    <li class="nav-item">
+                                        <a href="{{ route('blog') }}" class="nav-link">{{ $global_page_data->blog_heading }}</a>
+                                    </li>
+                                @endif
                                 <li class="nav-item">
                                     <a href="contact.html" class="nav-link">Contact</a>
                                 </li>
@@ -127,8 +136,14 @@
                             <h2 class="heading">Site Links</h2>
                             <ul class="useful-links">
                                 <li><a href="rooms.html">Rooms & Suites</a></li>
-                                <li><a href="photo-gallery.html">Photo Gallery</a></li>
-                                <li><a href="blog.html">Blog</a></li>
+
+                                @if($global_page_data->photo_gallery_status == 1)
+                                    <li><a href="{{ route('photo') }}">{{ $global_page_data->photo_gallery_heading }}</a></li>
+                                @endif
+
+                                @if($global_page_data->blog_status == 1)
+                                    <li><a href="{{ route('blog') }}">{{ $global_page_data->blog_heading }}</a></li>
+                                @endif
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -137,9 +152,16 @@
                         <div class="item">
                             <h2 class="heading">Useful Links</h2>
                             <ul class="useful-links">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="terms.html">Terms and Conditions</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
+                                @if($global_page_data->term_condition_status == 1)
+                                    <li><a href="{{ route('term_cond') }}">{{ $global_page_data->term_condition_heading }}</a></li>
+                                @endif
+                                @if($global_page_data->privacy_status == 1)
+                                    <li><a href="{{ route('privacy') }}">{{ $global_page_data->privacy_heading }}</a></li>
+                                @endif
+                                @if($global_page_data->faq_status == 1)
+                                    <li><a href="{{ route('faq') }}">{{ $global_page_data->faq_heading }}</a></li>
+                                @endif
                                 <li><a href="disclaimer.html">Disclaimer</a></li>
                             </ul>
                         </div>

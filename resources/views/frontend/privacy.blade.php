@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>{{ $get_about_data->about_heading }}</h2>
+                <h2>{{ $get_privacy_data->privacy_heading }}</h2>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p>
-                    {!! $get_about_data->about_content !!}    
+                    {!! $get_privacy_data->privacy_content !!}    
                 </p>
                
             </div>

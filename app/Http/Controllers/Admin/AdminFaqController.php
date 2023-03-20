@@ -22,7 +22,10 @@ class AdminFaqController extends Controller
 
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required',
+        ]);
         
         $obj = new Faq();
         $obj->question = $request->question;
@@ -34,10 +37,10 @@ class AdminFaqController extends Controller
 
     public function edit($id)
     {
-        
+           
         $get_faq_data = Faq::where('id', $id)->first();
 
-        return view('admin.photo_edit', compact('get_faq_data'));
+        return view('admin.faq_edit', compact('get_faq_data'));
     }
 
     public function update(Request $request, $id)

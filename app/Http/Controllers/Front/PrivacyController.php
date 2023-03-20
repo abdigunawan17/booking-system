@@ -6,12 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class PrivacyController extends Controller
 {
-    //
     public function index()
     {
-        $get_about_data = Page::where('id', 1)->first();
-        return view('frontend.about', compact(('get_about_data')));
+        $get_privacy_data = Page::where('id', 1)->first();
+        return view('frontend.privacy', compact(('get_privacy_data')));
     }
 }

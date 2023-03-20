@@ -18,7 +18,7 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Question</th>
-                                    <th>Answer</th>
+                                    
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -26,8 +26,8 @@
                                 @foreach ($get_faq as $row)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->answer }}</td>
                                     <td>{{ $row->question }}</td>
+                                    
                                     
                                     <td class="pt_10 pb_10">
                                         <a href="{{ route('admin_faq_edit', $row->id) }}" class="btn btn-primary">Edit</a>
