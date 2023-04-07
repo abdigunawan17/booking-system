@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminLoginController extends Controller
 {
-    
+    /*
     public function showpass()
     {
         $pass = Hash::make('1234');
         dd($pass);
     }
+    */
 
     public function login()
     {

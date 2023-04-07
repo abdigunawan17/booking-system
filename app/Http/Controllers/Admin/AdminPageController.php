@@ -113,4 +113,107 @@ class AdminPageController extends Controller
 
         return redirect()->back()->with('success', 'Blog is updated successfully.');
     }
+
+    public function room()
+    {
+        $get_room_data = Page::where('id', 1)->first();
+        return view('admin.page_room', compact('get_room_data'));
+    }
+
+    public function room_update(Request $request)
+    {
+
+        $obj = Page::where('id', 1)->first();
+        $obj->room_heading = $request->room_heading;
+        $obj->update();
+
+        return redirect()->back()->with('success', 'Room is updated successfully.');
+    }
+
+    public function cart()
+    {
+        $get_cart_data = Page::where('id', 1)->first();
+        return view('admin.page_cart', compact('get_cart_data'));
+    }
+
+    public function cart_update(Request $request)
+    {
+
+        $obj = Page::where('id', 1)->first();
+        $obj->cart_heading = $request->cart_heading;
+        $obj->cart_status = $request->cart_status;
+        $obj->update();
+
+        return redirect()->back()->with('success', 'Cart is updated successfully.');
+    }
+
+    public function checkout()
+    {
+        $get_checkout_data = Page::where('id', 1)->first();
+        return view('admin.page_checkout', compact('get_checkout_data'));
+    }
+
+    public function checkout_update(Request $request)
+    {
+
+        $obj = Page::where('id', 1)->first();
+        $obj->checkout_heading = $request->checkout_heading;
+        $obj->checkout_status = $request->checkout_status;
+        $obj->update();
+
+        return redirect()->back()->with('success', 'Checkout is updated successfully.');
+    }
+
+    public function payment()
+    {
+        $get_payment_data = Page::where('id', 1)->first();
+        return view('admin.page_payment', compact('get_payment_data'));
+    }
+
+    public function payment_update(Request $request)
+    {
+
+        $obj = Page::where('id', 1)->first();
+        $obj->payment_heading = $request->payment_heading;
+        $obj->payment_status = $request->payment_status;
+        $obj->update();
+
+        return redirect()->back()->with('success', 'payment is updated successfully.');
+    }
+
+
+    public function signup()
+    {
+        $get_signup_data = Page::where('id', 1)->first();
+        return view('admin.page_signup', compact('get_signup_data'));
+    }
+
+    public function signup_update(Request $request)
+    {
+
+        $obj = Page::where('id', 1)->first();
+        $obj->signup_heading = $request->signup_heading;
+        $obj->signup_status = $request->signup_status;
+        $obj->update();
+
+        return redirect()->back()->with('success', 'signup is updated successfully.');
+    }
+
+
+    public function signin()
+    {
+        $get_signin_data = Page::where('id', 1)->first();
+        return view('admin.page_signin', compact('get_signin_data'));
+    }
+
+    public function signin_update(Request $request)
+    {
+
+        $obj = Page::where('id', 1)->first();
+        $obj->signin_heading = $request->signin_heading;
+        $obj->signin_status = $request->signin_status;
+        $obj->update();
+
+        return redirect()->back()->with('success', 'signin is updated successfully.');
+    }
 }

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="{{ asset('dist-frontend/css/select2.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dist-frontend/css/select2-bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dist-frontend/css/sweetalert2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist-frontend/css/iziToast.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dist-frontend/css/spacing.css') }}">
 <link rel="stylesheet" href="{{ asset('dist-frontend/css/font-awesome.min.css') }}">
 <link rel="stylesheet" href="{{ asset('dist-frontend/css/daterangepicker.css') }}">

@@ -19,7 +19,9 @@ class BlogController extends Controller
     public function show_blog($slug)
     {
         $get_blog_detail = Post::where('slug', $slug)->first();
+        //tambah 1 total view sebelumnya 
         $get_blog_detail->total_view = $get_blog_detail->total_view +1;
+        //setelah totao view ditambahkan, kemudian update lah post tersebut
         $get_blog_detail->update();
 
         return view('frontend.blog_show', compact(('get_blog_detail')));
